@@ -96,4 +96,3 @@ export const login = async (req, res) => {
     res.status(500).json({ status: false, message: "Failed To Login" });
   }
 };
-

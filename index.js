@@ -4,6 +4,10 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import authRoutes from './Routes/auth.js';
+import usersRoutes from './Routes/user.js';
+import doctorsRoutes from './Routes/doctor.js';
+import reviewRoutes from './Routes/review.js';
+
 
 dotenv.config();
 
@@ -35,6 +39,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use('/api/v1/auth', authRoutes); // ← seule route, en import ESM
+app.use('/api/v1/users', usersRoutes); // ← seule route, en import ESM
+app.use('/api/v1/doctors', doctorsRoutes); // ← seule route, en import ESM
+app.use('/api/v1/reviews', reviewRoutes); // ← seule route, en import ESM
+
+
 
 app.listen(port, () => {
   connectDB();
