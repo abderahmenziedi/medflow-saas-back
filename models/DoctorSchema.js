@@ -8,11 +8,25 @@ const DoctorSchema = new mongoose.Schema({
   photo: { type: String },
   ticketPrice: { type: Number },
   role: { type: String },
+  gender: { type: String, enum: ["male", "female", "other"] },
 
   // Fields for doctors only
-  specialization: { type: String },
-  qualifications: { type: Array },
-  experiences: { type: Array },
+  specialization: { 
+    type: String, 
+    enum: ["cardiologue", "dentiste", "generaliste", "aide soignant"] 
+  },
+  qualifications: [{
+    degree: { type: String },
+    institute: { type: String },
+    from: { type: Date },
+    to: { type: Date }
+  }],
+  experiences: [{
+    position: { type: String },
+    hospital: { type: String },
+    from: { type: Date },
+    to: { type: Date }
+  }],
   bio: { type: String, maxLength: 50 },
   about: { type: String },
   timeSlots: { type: Array },
