@@ -7,6 +7,7 @@ import authRoutes from './Routes/auth.js';
 import usersRoutes from './Routes/user.js';
 import doctorsRoutes from './Routes/doctor.js';
 import reviewRoutes from './Routes/review.js';
+import bookingRoutes from './Routes/booking.js';
 
 
 dotenv.config();
@@ -42,6 +43,7 @@ app.use('/api/v1/auth', authRoutes); // ← seule route, en import ESM
 app.use('/api/v1/users', usersRoutes); // ← seule route, en import ESM
 app.use('/api/v1/doctors', doctorsRoutes); // ← seule route, en import ESM
 app.use('/api/v1/reviews', reviewRoutes); // ← seule route, en import ESM
+app.use('/api/v1/bookings', bookingRoutes); // ← seule route, en import ESM
 
 
 

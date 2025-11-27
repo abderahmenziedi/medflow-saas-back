@@ -109,7 +109,7 @@ const doctorId = req.userId;
         })
       }
       const {password,...rest}=doctor._doc;
-      const appointments = await Booking.find({doctor:doctorId})
+      const appointments = await Booking.find({doctor:doctorId}).populate('user');
       res.status(200).json({
         success: true,
         message: "Profile info is Getting",

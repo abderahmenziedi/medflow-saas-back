@@ -3,7 +3,7 @@ import {
     getAllReviews,
     createReview,
 }from "../Controllers/reviewController.js"
-import{authenticate,restrict}from "../auth/verifytoken.js"
+import{authenticate,restrict}from "../auth/verifyToken.js"
 
 
 
